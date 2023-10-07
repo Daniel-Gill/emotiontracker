@@ -54,7 +54,7 @@ ROOT_URLCONF = 'emotiontracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['tracker/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

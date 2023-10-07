@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Login</h1>
+        </div>
+        
+        <div class="content">
+            <!-- Login Form -->
+            <form action="login/auth" method="post">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
