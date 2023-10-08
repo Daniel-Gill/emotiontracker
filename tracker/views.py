@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the tracker index.")
+    return render(request, "tracker/index.html")
 
 @login_required(login_url="login")
 def dashboard(request):
