@@ -11,7 +11,7 @@
         <!-- 2x2 grid of buttons -->
         <div class="row justify-content-center">
             <div class="col-sm-5 m-md-2 my-md-4 m-4">
-                <a href="" class="container btn btn-success btn-lg btn-block p-3"><i class="fa-solid fa-plus pt-3"></i><p class="pt-3">Add Entry</p></a>
+                <a href="/add" class="container btn btn-success btn-lg btn-block p-3"><i class="fa-solid fa-plus pt-3"></i><p class="pt-3">Add Entry</p></a>
             </div>
             <div class="col-sm-5 m-2 my-4">
                 <a href="" class="container btn btn-info btn-lg btn-block p-3"><i class="fa-solid fa-timeline pt-3"></i><p class="pt-3">Timeline</p></a>
@@ -26,7 +26,18 @@
 
     </div>
     <div class="card col-sm p-3 m-4">
-
+        <!-- Display latest entries from database -->
+        <h3 class="text-center">Latest Entries</h3>
+        {% for entry in entries %}
+        <div class="card m-2">
+            <div class="card-body">
+                <h5 class="card-title">{{ entry.emoji }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ entry.date }}</h6>
+                <p class="card-text">{{ entry.severity }}</p>
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}

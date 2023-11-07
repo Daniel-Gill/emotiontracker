@@ -1,0 +1,47 @@
+{% extends 'tracker/base.html' %}
+
+{% load static %}
+
+<style>
+    .emoji-input {
+        font-size: 4em;
+        text-align: center;
+    }
+</style>
+
+{% block title %}
+    Add Entry
+{% endblock title %}
+
+{% block content %}
+    <div class="row justify-content-center m-0 p-5">
+        <div class="card col-sm-6 p-3 m-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <div class="col-md-10">
+                        <button type="button" class="btn btn-primary" id="emojiPicker">
+                            Pick Emoji
+                        </button>
+                        <p class="mt-3">Include the emoji that best reflects the emotion you are feeling.</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control emoji-input" id="emoji" name="emoji" readonly>
+                    </div>
+                </div>
+                <hr>
+            </form>
+            <script>
+                new EmojiPicker({
+                    trigger: [
+                        {
+                            selector: '#emojiPicker',
+                            insertInto: '#emoji',
+                        }
+                    ],
+                    closeButton: true,
+                });
+            </script>
+        </div>
+    </div>
+{% endblock %}
